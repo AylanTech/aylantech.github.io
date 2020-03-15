@@ -24,7 +24,7 @@ export default {
       clipped: false,
       drawer: false,
       fixed: false,
-      dark: false,
+      dark: true,
       flat: true,
       RTL: false,
       lang: 'en',
@@ -74,8 +74,24 @@ export default {
 </script>
 
 <style>
-.bgPic {
-  background-image: url(https://images.pexels.com/photos/186077/pexels-photo-186077.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260) !important;
-  background-size: cover !important;
+body {
+  background: url(https://images.pexels.com/photos/186077/pexels-photo-186077.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260)
+    no-repeat center center fixed;
+  background-size: cover;
+
+  &:after {
+    content: '';
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: #1734c1;
+    opacity: 0.3;
+    z-index: -1;
+  }
+}
+.v-application {
+  background: none !important;
 }
 </style>
